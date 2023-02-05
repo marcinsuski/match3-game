@@ -153,9 +153,6 @@ const App = () => {
         setCurrentColorArrangement(randomColorArrangement)
     }
 
-    useEffect(() => {
-        createBoard()
-    }, [])
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -168,6 +165,10 @@ const App = () => {
         }, 100)
         return () => clearInterval(timer)
     }, [checkForColumnOfFour, checkForRowOfFour, checkForColumnOfThree, checkForRowOfThree, moveIntoSquareBelow, currentColorArrangement])
+
+    useEffect(() => {
+        createBoard()
+    }, [])
 
 
     return (
